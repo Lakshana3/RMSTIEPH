@@ -1,2 +1,2 @@
 # RMSTIEPH
-Remote medical suggestion through IoT enabled personalized healthcare
+Project - Remote medical suggestion through IoT enabled personalized healthcare
