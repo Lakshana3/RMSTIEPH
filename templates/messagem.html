@@ -1,0 +1,26 @@
+{% extends "header_m.html" %}
+
+{% block body %}
+<div class="container-fluid">
+	<h3>Messages</h3>
+	<br>
+	<table class="table" cellpadding="5" cellspacing="5">
+		<thread>
+			<tr class="danger">
+				<th>Date Time</th>
+				<th>Messages</th>
+
+			</tr>
+		</thread>
+		<tbody>
+		{% for row in data %}
+			<tr>
+			{%  for d in row %}
+				<td>{{ d }}</td>	
+			{% endfor %}
+			</tr>
+		{% endfor %}
+		</tbody>
+	</table>
+</div>
+{% endblock %}

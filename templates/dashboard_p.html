@@ -1,0 +1,28 @@
+{% extends "header_p.html" %}
+
+{% block body %}
+	<div class="container-fluid">
+		<form method=post action="">
+			<input class="btn btn-warning pull-right" type="submit" value="Start">
+		<br><br>
+		<table class="table"  cellpadding="5" cellspacing="5">
+			<thread>
+				<tr class="danger">
+					<th>Date Time</th>
+					<th>Temperature</th>
+					<th>Pulse Rate</th>
+				</tr>
+			</thread>
+			<tbody>
+			{% for row in data %}
+				<tr>
+				{%  for d in row %}
+					<td>{{ d }}</td>	
+				{% endfor %}
+				</tr>
+			{% endfor %}
+		
+		</table>
+		</form>
+	</div>
+{% endblock %}

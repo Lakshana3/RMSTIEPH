@@ -1,0 +1,26 @@
+{% extends "header_p.html" %}
+{% block body %}
+<body>
+	<div class="container-fluid" style="width: 80%">
+		<br>
+		<h3>Please Login:</h3>
+		<br>
+		<form action="" class="form-horizontal" method="post">
+			<input type="text" class="form-control" placeholder = "Username" name="username" value="{{request.form.username}}"><br>			
+			<input type="password" class="form-control" placeholder = "Password" name="password" value="{{request.form.password}}">
+			<br>
+			<div class="form-group container">
+				<div class="input-group">
+					<label for="tou"><span class="input-group-addon">Type of User:</span></label>
+					<select class="selectpicker form-control" id="tou" name="tou">
+						<option value="m">Medical Practitioner</option>
+						<option value="p">Patient</option>
+	 				</select>
+				</div>
+			</div>
+			<input class="btn btn-default" type="submit" value="Login">
+		</form>
+		{{ error }}
+	</div>
+</body>
+{% endblock %}

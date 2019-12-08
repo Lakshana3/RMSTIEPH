@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>RMSTIEPH</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+		<link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+	</head>
+
+	<header>
+		<div class="navbar-header">
+		  <a class="navbar-brand" href="/">
+		  <img style="max-width:120px; margin-top: -7px;" src="{{ url_for('static', filename='images/a.png') }}">
+		  </a>
+		</div>
+
+		<div class = "container-fluid">
+			<a href="/dashboard_p/"><button type="button" class="btn btn-danger" aria-label="Left Align" style="margin-top: 5px; margin-bottom: 5px; height: 44px; margin-right: 15px">
+			  <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Dashboard
+			</button></a>
+
+			<ul class="nav navbar-nav navbar-right">
+				  
+				 <div style="margin-right: 10px; margin-left: 15px; margin-top: 5px; margin-bottom: 5px;"  class="container-fluid">
+			
+					<h5>
+					{% if session.logged_in %}
+					<a href="/logout/"><span class="glyphicon glyphicon-log-out"></span> Logout   </a>
+					
+					{% else %}
+					<a href="/login/"><span class="glyphicon glyphicon-log-in"></span> Login   </a>	
+					<a href="/register/"><span class="glyphicon glyphicon-pencil"></span>  Sign up</a><h5>
+					{% endif %}
+					</h5>
+				</div>
+			</ul>
+		</div>
+	</header>
+
+	<body>
+		<div class="container" align="center" style="height:80%"
+			<a href="/dashboard/"><img src="{{ url_for('static',filename='videos/arose.png') }}">  </a>
+			{% with messages = get_flashed_messages() %}
+			  {% if messages %}
+			    {% for message in messages %}
+				  <div class="alert alert-warning alert-dismissible" role="alert">
+				  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+					{{message}}
+				  </div>
+			    {% endfor %}
+			  {% endif %}
+			{% endwith %}
+			</div>
+		<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+		
+	</body>
+
+</html>

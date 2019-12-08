@@ -1,0 +1,33 @@
+{% extends "header_m.html" %}
+
+{% block body %}
+<div class="container-fluid">
+	<h3>Monitored Sensor Data</h3>
+	<br>
+	<form action="" class="form-horizontal" method="post">		
+		<b>Comment:</b>
+		<input type="text" class="form-control" name="comment" value="{{request.form.comment}}"><br>
+		<input class="btn btn-default" type="submit" value="Submit">		
+	</form>
+{{error }}
+	<br><br>
+	<table class="table" cellpadding="5" cellspacing="5">
+		<thread>
+			<tr class="danger">
+				<th>Date Time</th>
+				<th>Temperature</th>
+				<th>Pulse Rate</th>
+			</tr>
+		</thread>
+		<tbody>
+		{% for row in data %}
+			<tr>
+			{%  for d in row %}
+				<td>{{ d }}</td>	
+			{% endfor %}
+			</tr>
+		{% endfor %}
+		</tbody>
+	</table>
+</div>
+{% endblock %}

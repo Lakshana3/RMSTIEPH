@@ -1,0 +1,25 @@
+{% extends "header_m.html" %}
+
+{% block body %}
+	<div class="container-fluid" style="max-width: 80%">
+		<br>
+		<h3>Profile</h3>
+		
+		<form action="" method="post" class="form-horizontal">
+			<br>
+			Username : <input type="text" readonly name="username" value="{{ username }}"><br><br>
+			Email Id : <input type="text" readonly name="email" value="{{ email }}"><br><br>
+				   <input type="text" class="form-control" name="email1" value="{{ request.form.email1 }}"><br>
+			Age      : <input type="text" readonly name="age" value="{{ age }}"><br><br>
+				   <input type="text" class="form-control" name="age1" value="{{ request.form.age1 }}"><br>
+			Gender   : <input type="text" readonly name="gender" value="{{ gender }}"><br><br>
+			Qualification: <input type="text" readonly class="form-control-plaintext" name="qual" value="{{ qual }}"><br><br>
+				   <input type="text" class="form-control" name="qual1" value="{{ request.form.qual1 }}"><br>
+			Currently working as: <input type="text" readonly name="cwas" value="{{ cwas }}"><br><br>
+				   <input type="text" class="form-control" name="cwas1" value="{{ request.form.cwas1 }}"><br>
+			Currently working at: <input type="text" readonly name="cwat" value="{{ cwat }}"><br><br>
+				   <input type="text" class="form-control input-lg" name="cwat1" value="{{ request.form.cwat1 }}"><br>
+				   <input class="btn btn-default" type="submit" value="Update"><br><br>
+		</form>
+	</div>
+{% endblock %}

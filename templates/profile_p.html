@@ -1,0 +1,21 @@
+{% extends "header_p.html" %}
+
+{% block body %}
+	<div class="container-fluid" style="max-width: 80%">
+		<br>
+		<h3>Profile</h3>
+		
+		<form action="" method=post class="form-horizontal form-group">		
+			<br>
+			Username : <input type="text" readonly name="username" value="{{ username }}"><br><br>
+			Email Id : <input type="text" readonly name="email" value="{{ email }}"><br><br>
+				   <input type="text" class="form-control" name="email1" value="{{ request.form.email1 }}"><br>
+			Age      : <input type="text" readonly name="age" value="{{ age }}"><br><br>
+				   <input type="text" class="form-control" name="age1" value="{{ request.form.age1 }}"><br>
+			Gender   : <input type="text" readonly name="gender" value="{{ gender }}"><br><br>
+			Allergies: <input type="text" readonly name="allergies" value="{{ allergies }}"><br><br>
+				   <input type="text" class="form-control input-lg" name="allergies1" value="{{ request.form.allergies1 }}"><br>
+				   <input class="btn btn-default" type="submit" value="Update"><br><br>			
+		</form>
+	</div>
+{% endblock %}

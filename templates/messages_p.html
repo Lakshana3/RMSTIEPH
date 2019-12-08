@@ -1,0 +1,24 @@
+{% extends "header_p.html" %}
+
+{% block body %}
+<br><br>
+<table class="table" cellpadding="5" cellspacing="5">
+	<thread>
+		<tr class="danger">
+			<th>Doctor Names</th>
+			<th> </th>
+		</tr>
+	</thread>
+	<tbody>
+	{% for row in data %}
+		<tr>
+		{%  for d in row %}
+			<td><a href="/messagesp/{{d}}">{{ d }}</a></td>	
+			<td><a href="/profilem/{{d}}">Profile</a></td>
+		{% endfor %}
+		</tr>
+	{% endfor %}
+	</tbody>
+</table>
+
+{% endblock %}
